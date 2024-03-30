@@ -1,8 +1,6 @@
 <template>
     <view>
       <Dongdong class="w-10 h-10" />
-
-
     </view>
   </template>
   

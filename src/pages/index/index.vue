@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { Dongdong } from '@nutui/icons-vue-taro';
 import Taro from '@tarojs/taro';
+import { ref } from 'vue';
 
 const data = ref({
   msg: '欢迎使用 NutUI4.0 开发小程序',

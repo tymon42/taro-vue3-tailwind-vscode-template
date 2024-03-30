@@ -1,48 +1,42 @@
 <template>
   <view>
-    <view>
-      <img src="" alt="">
-    </view>
-    {{ msg }} <Dongdong />
+    <Dongdong />
     <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
+      <nut-button type="primary" @click="handleClick('text', data.msg2, true)">点我</nut-button>
     </view>
-    <nut-toast :msg="msg2" v-model:visible="show" :type="type" :cover="cover"/>
-    <view class="p-2 w-32 bg-gray-200">p-2 w-32 bg-gray-200</view>
+    <nut-toast :msg="data.msg2" v-model:visible="data.show" :type="data.type" :cover="data.cover" />
+    <view class="w-32 p-2 bg-gray-200">p-2 w-32 bg-gray-200</view>
     <text class="text-[50rpx] text-[#123456]">text-[50rpx] text-[#123456]</text>
+    <nut-button type="primary" @tap="handleAbcClick">abc</nut-button>
   </view>
 </template>
 
-<script>
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 import { Dongdong } from '@nutui/icons-vue-taro';
-export default {
-  name: 'Index',
-  components: {
-    Dongdong
-  },
-  setup() {
-    const state = reactive({
-      msg: '欢迎使用 NutUI4.0 开发小程序',
-      msg2: '你成功了～',
-      type: 'text',
-      show: false,
-      cover: false
-    });
+import Taro from '@tarojs/taro';
 
-    const handleClick = (type, msg, cover = false) => {
-      state.show = true;
-      state.msg2 = msg;
-      state.type = type;
-      state.cover = cover;
-    };
+const data = ref({
+  msg: '欢迎使用 NutUI4.0 开发小程序',
+  msg2: '你成功了～',
+  type: 'text',
+  show: false,
+  cover: false
+})
 
-    return {
-      ...toRefs(state),
-      handleClick
-    }
-  }
-}
+const handleClick = (type, msg, cover = false) => {
+  data.value.show = true;
+  data.value.msg2 = msg;
+  data.value.type = type;
+  data.value.cover = cover;
+};
+
+const handleAbcClick = () => {
+  console.log('handleAbcClick');
+  Taro.navigateTo({
+    url: '/pages/abc/abc',
+  })
+};
 </script>
 
 <style lang="scss">

@@ -1,3 +1,16 @@
 {
-    "recommendations": [],
+    "recommendations": [
+        "vue.vscode-typescript-vue-plugin",
+        "dbaeumer.vscode-eslint",
+        "redjue.git-commit-plugin",
+        "seatonjiang.gitmoji-vscode",
+        "eamodio.gitlens",
+        "bradlc.vscode-tailwindcss",
+        "standard.vscode-standard",
+        "stylelint.vscode-stylelint",
+        "mohsen1.prettify-json",
+        "xabikos.javascriptsnippets",
+        "heybourn.headwind",
+        "steoates.autoimport"
+    ],
 }

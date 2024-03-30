@@ -15,4 +15,4 @@ pnpm dev:weapp
 # Features
 - eslint
 - tailwind
-- nutui
+- [nutui](https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/button)
